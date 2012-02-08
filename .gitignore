@@ -1,0 +1,10 @@
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
+tmp/
+*.DS_Store
+coverage/*
+*.sw[op]
+tags
+!.keep

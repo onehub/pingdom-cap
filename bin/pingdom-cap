@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'pingdom_cap'
+PingdomCap::App.new.run
