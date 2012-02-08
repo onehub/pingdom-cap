@@ -28,7 +28,7 @@ module PingdomCap
 
     def status(name)
       puts "Status for Pingdom '#{name}'"
-      ap get_detailed_check_information(name_to_checkid(name)).to_hash
+      ap get_detailed_check_information(name_to_checkid(name)).to_hash, plain: true
     end
 
     def pause(name)
