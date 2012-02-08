@@ -27,8 +27,12 @@ describe PingdomCap::Client, '.new' do
 end
 
 describe PingdomCap::Client do
-  subject { PingdomCap::Client.new(username: ENV['PINGDOM_USERNAME'], password: ENV['PINGDOM_PASSWORD'], key: ENV['PINGDOM_KEY']) }
-  let(:check_name) { ENV['PINGDOM_CHECK_NAME'] }
+  subject { PingdomCap::Client.new(
+    username: ENV['PINGDOM_USERNAME'] || 'james@example.com',
+    password: ENV['PINGDOM_PASSWORD'] || 'xyzzy',
+    key: ENV['PINGDOM_KEY'] || 'zzzzz'
+  ) }
+  let(:check_name) { ENV['PINGDOM_CHECK_NAME'] || 'sub.example.com' }
   let(:any_status) { /\"status\" => \"(?:unknown|up|paused)\"/m }
   let(:unpaused)   { /\"status\" => \"(?:unknown|up)\"/m }
   let(:paused)     { /\"status\" => \"paused\"/m }
