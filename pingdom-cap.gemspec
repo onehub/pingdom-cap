@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'capistrano',           '~> 2.9.0'
   s.add_dependency 'faraday',              [ '>= 0.7.6', '< 0.8' ]
   s.add_dependency 'faraday_middleware',   [ '>=  0.7',  '< 0.8' ]
-  s.add_dependency 'hashie',               '~> 1.0.0'
+  s.add_dependency 'hashie',               '~> 1.2.0'
   s.add_dependency 'multi_json',           '~> 1.0.4'
   s.executables << 'pingdom-cap'
 
