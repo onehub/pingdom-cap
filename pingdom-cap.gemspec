@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files spec`.split("\n")
   s.add_dependency 'awesome_print',        '~> 1.0.2'
   s.add_dependency 'capistrano',           '~> 2.9.0'
-  s.add_dependency 'faraday',              '~> 0.7.6'
-  s.add_dependency 'faraday_middleware',   '~> 0.7'
+  s.add_dependency 'faraday',              [ '>= 0.7.6', '< 0.8' ]
+  s.add_dependency 'faraday_middleware',   [ '>=  0.7',  '< 0.8' ]
   s.add_dependency 'hashie',               '~> 1.0.0'
   s.add_dependency 'multi_json',           '~> 1.0.4'
   s.executables << 'pingdom-cap'
