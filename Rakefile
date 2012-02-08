@@ -1,7 +1,7 @@
 require 'bundler/setup'
 require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
-require 'cucumber/rake/task'
+# require 'cucumber/rake/task'
 
 desc 'Default: run the specs.'
 task :default => [:spec ] #, :cucumber]
