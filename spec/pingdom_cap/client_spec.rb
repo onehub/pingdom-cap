@@ -29,6 +29,7 @@ end
 describe PingdomCap::Client do
   subject { PingdomCap::Client.new(username: ENV['PINGDOM_USERNAME'], password: ENV['PINGDOM_PASSWORD'], key: ENV['PINGDOM_KEY']) }
   let(:check_name) { ENV['PINGDOM_CHECK_NAME'] }
+  let(:any_status) { /\"status\" => \"(?:unknown|up|paused)\"/m }
   let(:unpaused)   { /\"status\" => \"(?:unknown|up)\"/m }
   let(:paused)     { /\"status\" => \"paused\"/m }
 
@@ -36,7 +37,7 @@ describe PingdomCap::Client do
     it "should return a status for a check name" do
       VCR.use_cassette('status') do
         STDOUT.expects(:puts).with("Status for Pingdom '#{check_name}'")
-        STDOUT.expects(:puts).with(regexp_matches(unpaused))
+        STDOUT.expects(:puts).with(regexp_matches(any_status))
         subject.status(check_name)
       end
     end
