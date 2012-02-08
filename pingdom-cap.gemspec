@@ -26,4 +26,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec',   '~> 2.8.0'
   s.add_development_dependency 'mocha',   '~> 0.10.0'
   s.add_development_dependency 'webmock', '~> 1.7.10'
+  s.add_development_dependency 'vcr',     '= 2.0.0.rc1'
 end

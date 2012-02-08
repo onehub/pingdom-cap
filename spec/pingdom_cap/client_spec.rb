@@ -26,4 +26,48 @@ describe PingdomCap::Client, '.new' do
   end
 end
 
+describe PingdomCap::Client do
+  subject { PingdomCap::Client.new(username: ENV['PINGDOM_USERNAME'], password: ENV['PINGDOM_PASSWORD'], key: ENV['PINGDOM_KEY']) }
+  let(:check_name) { ENV['PINGDOM_CHECK_NAME'] }
+  let(:unpaused)   { /\"status\" => \"(?:unknown|up)\"/m }
+  let(:paused)     { /\"status\" => \"paused\"/m }
 
+  describe '#status' do
+    it "should return a status for a check name" do
+      VCR.use_cassette('status') do
+        STDOUT.expects(:puts).with("Status for Pingdom '#{check_name}'")
+        STDOUT.expects(:puts).with(regexp_matches(unpaused))
+        subject.status(check_name)
+      end
+    end
+  end
+
+  describe '#pause' do
+    it "should be able to pause a check" do
+      VCR.use_cassette('pause') do
+         STDOUT.expects(:puts).with("Pausing Pingdom '#{check_name}'")
+         subject.pause(check_name)
+      end
+      VCR.use_cassette('status_after_pause') do
+        STDOUT.expects(:puts).with("Status for Pingdom '#{check_name}'")
+        STDOUT.expects(:puts).with(regexp_matches(paused))
+        subject.status(check_name)
+      end
+    end
+  end
+
+  describe '#unpause' do
+    it "should be able to unpause a check" do
+      VCR.use_cassette('unpause') do
+         STDOUT.expects(:puts).with("Unpausing Pingdom '#{check_name}'")
+         subject.unpause(check_name)
+      end
+      VCR.use_cassette('status_after_unpause') do
+        STDOUT.expects(:puts).with("Status for Pingdom '#{check_name}'")
+        STDOUT.expects(:puts).with(regexp_matches(unpaused))
+        subject.status(check_name)
+      end
+    end
+  end
+
+end

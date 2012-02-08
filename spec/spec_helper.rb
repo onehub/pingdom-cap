@@ -11,3 +11,11 @@ require 'pingdom_cap'
 RSpec.configure do |config|
   config.mock_with :mocha
 end
+
+# WebMock.disable_net_connect!
+
+require 'vcr'
+VCR.configure do |c|
+  c.cassette_library_dir = 'fixtures/vcr_cassettes'
+  c.hook_into :webmock
+end
