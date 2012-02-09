@@ -21,9 +21,13 @@ module PingdomCap
               client = PingdomCap::Client.new(username: username, password: password, key: key)
               client.send(operation, check_name)
             end
-            logger.info("Pingdom: #{operation}d")
+            logger.info("Pingdom: #{operation}")
           end
 
+          desc "Status of check at Pingdom"
+          task :status, :except => { :no_release => true } do
+            pingdom(configuration, 'status')
+          end
           desc "Pause checks at Pingdom"
           task :pause, :except => { :no_release => true } do
             pingdom(configuration, 'pause')
