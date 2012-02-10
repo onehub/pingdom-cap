@@ -14,6 +14,9 @@ end
 
 desc "Run cucumber features"
 Cucumber::Rake::Task.new do |t|
-  t.cucumber_opts = ['--tags', '~@wip',
-                     '--format', (ENV['CUCUMBER_FORMAT'] || 'progress')]
+  t.cucumber_opts = [
+    '--tags', '~@wip',
+    '--tags', '~@slow_process',
+    '--format', (ENV['CUCUMBER_FORMAT'] || 'progress')
+  ]
 end
