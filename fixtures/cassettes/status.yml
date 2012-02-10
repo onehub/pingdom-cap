@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://john%40example.com:zzzzyyyyxxxxwwww@api.pingdom.com/api/2.0/checks
+    body: ''
+    headers:
+      App-Key:
+      - aaaabbbbccccddddeeeefffffaaaabbbb
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 09 Feb 2012 18:38:12 GMT
+      Server:
+      - Apache/2.2.14 (Ubuntu)
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.11
+      Cache-Control:
+      - no-cache
+      Req-Limit-Short:
+      - ! 'Remaining: 991 Time until reset: 3542'
+      Req-Limit-Long:
+      - ! 'Remaining: 4791 Time until reset: 86342'
+      Server-Time:
+      - '1328812694'
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '151'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body: !binary |-
+      H4sIAAAAAAAAA02OMQ6DMAxF7/LnqCJAVMhVqg5R6iioQCLiDAhx9xqxdPDy
+      nr/9D/hI/ltgXwemD2xvtO5HBb+RYxKgu7Ztms6MvcLqFoLFM4QAhZgK/5GH
+      T4vQjUqaK09phTUKvOdrITJnkbMrzCQzXTE5PQy6Nc14G4nmtBa6rfxVKOy4
+      SjvUjPN9/gAt5+/8rwAAAA==
+    http_version: !!null 
+  recorded_at: Thu, 09 Feb 2012 18:38:14 GMT
+- request:
+    method: get
+    uri: https://john%40example.com:zzzzyyyyxxxxwwww@api.pingdom.com/api/2.0/checks/451149
+    body: ''
+    headers:
+      App-Key:
+      - aaaabbbbccccddddeeeefffffaaaabbbb
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 09 Feb 2012 18:38:14 GMT
+      Server:
+      - Apache/2.2.14 (Ubuntu)
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.11
+      Cache-Control:
+      - no-cache
+      Req-Limit-Short:
+      - ! 'Remaining: 990 Time until reset: 3540'
+      Req-Limit-Long:
+      - ! 'Remaining: 4790 Time until reset: 86340'
+      Server-Time:
+      - '1328812694'
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '320'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body: !binary |-
+      H4sIAAAAAAAAA12RwW6DMAyG38WnTWKFUOja3PYGu+w0JpQGU6JCkiVmqKp4
+      9zmqplU9RJG+37H/37mCHlCfQV7BdCCrWojqkIFVE4KE177vIYOA0Y0zGWdB
+      1hlEtB05nJQZQfZqjPjH4hQfCC2GCMMDNX5wFh+gsl1wycQdtY5Mb7RKs5eB
+      gVvYQ8kGk3BRJ2Us/mC43MFUd1T6PHuQFGbupAMqQu4stmVZFNv6UGVAF48p
+      9kDk0z0HTgNNznm9CwRyX6Tk3zNGGlB1GGIq+4gYXt5OaLkC3o09dW7aaDe1
+      R0ctO4nstBWbqn1KjWWTN/myLBv/X9nkz7CuawaDi3S36KTxcO0sKU2m43Gf
+      5U6I7e6Ll0GKZibAqTIYVeSt8jHpNafa70VZF4ebwt/lnY14Uznyuv4CK5ah
+      TOcBAAA=
+    http_version: !!null 
+  recorded_at: Thu, 09 Feb 2012 18:38:15 GMT
+recorded_with: VCR 2.0.0.rc1

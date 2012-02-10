@@ -15,24 +15,24 @@ describe PingdomCap::Client, '.new' do
     lambda { subject.new(password: nil) }.should raise_error
   end
   it "should not raise an error when key, url, username, and password are specified" do
-    lambda { subject.new(key: 'some_key', url: 'https://api.pingdom.com', username: 'john@8fff.com', password: '123456') }.should_not raise_error
+    lambda { subject.new(key: 'some_key', url: 'https://api.pingdom.com', username: 'john@example.com', password: '123456') }.should_not raise_error
   end
   it "should not raise an error when non-default options are missing" do
-    lambda { subject.new(key: 'some_key', username: 'john@8fff.com', password: '123456') }.should_not raise_error
+    lambda { subject.new(key: 'some_key', username: 'john@example.com', password: '123456') }.should_not raise_error
   end
   it "should create a connection during initialization" do
-    client = subject.new(key: 'some_key', username: 'john@8fff.com', password: '123456')
+    client = subject.new(key: 'some_key', username: 'john@example.com', password: '123456')
     client.connection.should_not be_nil
   end
 end
 
 describe PingdomCap::Client do
   subject { PingdomCap::Client.new(
-    username: ENV['PINGDOM_USERNAME'] || 'james@example.com',
-    password: ENV['PINGDOM_PASSWORD'] || 'xyzzy',
-    key: ENV['PINGDOM_KEY'] || 'zzzzz'
+    username: ENV['PINGDOM_USERNAME'] || 'john@example.com',
+    password: ENV['PINGDOM_PASSWORD'] || 'zzzzyyyyxxxxwwww',
+    key: ENV['PINGDOM_KEY'] || 'aaaabbbbccccddddeeeefffffaaaabbbb'
   ) }
-  let(:check_name) { ENV['PINGDOM_CHECK_NAME'] || 'sub.example.com' }
+  let(:check_name) { ENV['PINGDOM_CHECK_NAME'] || '7fff' }
   let(:any_status) { /\"status\" => \"(?:unknown|up|paused)\"/m }
   let(:unpaused)   { /\"status\" => \"(?:unknown|up)\"/m }
   let(:paused)     { /\"status\" => \"paused\"/m }
