@@ -2,7 +2,7 @@
 
 pingdom-cap provides Capistrano tasks that can pause and unpause Pingdom checks.
 
-or example, during a deploy, you probably don't want an email from Pingdom telling
+For example, during a deploy, you probably don't want an email from Pingdom telling
 you that your server is unavailable.
 
 ## Install
@@ -46,7 +46,10 @@ With these set, you can now type
     cap pingdom:unpause
 
 The first command with pause the check for 'check-name' and the second will unpause
-the same check.
+the same check. Additionally, there is a task that will dump the status of a check
+to the console:
+
+    cap pingdom:status
 
 Or you can use before and/or after hooks to trigger these tasks as needed:
 
@@ -62,6 +65,30 @@ The usage is:
     pingdom-cap check-name [status | pause | unpause]
 
 To set the username, password, and key, use the environment variables as described above.
+
+We added the command-line application because sometimes things go wrong. For example, it
+may happen that Pingdom is broken, and your attempt to "unpause" fails. If that happens,
+you probably want a means to unpause manually; in that case, use the command-line application.
+
+## Testing
+
+To run the specs,
+
+    bundle exec rake
+
+The Cucumber integration tests are all marked with @slow_process and are excluded in the rake task because they conduct a real round-trip with the server. To run them, set the environment variables (as above) and run Cucumber directly. For example,
+
+		PINGDOM_CHECK_NAME="check-name" PINGDOM_USERNAME="john@example.com" \
+		PINGDOM_PASSWORD="123456" PINGDOM_KEY="your-pingdom-key" bundle exec cucumber
+
+The specs use the VCR gem to verify HTTP requests and responses. To re-create the fixtures:
+
+		rm fixtures/cassettes/*    
+		PINGDOM_CHECK_NAME="check-name" PINGDOM_USERNAME="john@example.com" \
+		PINGDOM_PASSWORD="123456" PINGDOM_KEY="your-pingdom-key" bundle exec rake
+
+If you fork and generate new VCR cassettes, either don't check them in or obfuscate them,
+because they will contain your credentials.
 
 ## Contributing to pingdom-cap
  
