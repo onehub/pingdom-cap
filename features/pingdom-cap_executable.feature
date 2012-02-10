@@ -6,19 +6,19 @@ Feature: pingdom-cap executable
 
   @slow_process
   Scenario: Status check
-    When I successfully run `pingdom-cap training.icisapp.com status`
-    Then the output should contain "Status for Pingdom 'training.icisapp.com'"
-    And the output should contain:
+    When ERB I successfully run `pingdom-cap <%= ENV['PINGDOM_CHECK_NAME'] %> status`
+    Then ERB the output should contain "Status for Pingdom '<%= ENV['PINGDOM_CHECK_NAME'] %>'"
+    And ERB the output should contain:
     """
-    "name" => "training.icisapp.com"
+    "name" => "<%= ENV['PINGDOM_CHECK_NAME'] %>"
     """
 
   @slow_process
   Scenario: Pause check
-    When I successfully run `pingdom-cap training.icisapp.com pause`
-    Then the output should contain "Pausing Pingdom 'training.icisapp.com'"
+    When ERB I successfully run `pingdom-cap <%= ENV['PINGDOM_CHECK_NAME'] %>  pause`
+    Then ERB the output should contain "Pausing Pingdom '<%= ENV['PINGDOM_CHECK_NAME'] %>'"
 
   @slow_process
   Scenario: Unpause check
-    When I successfully run `pingdom-cap training.icisapp.com unpause`
-    Then the output should contain "Unpausing Pingdom 'training.icisapp.com'"
+    When ERB I successfully run `pingdom-cap <%= ENV['PINGDOM_CHECK_NAME'] %> unpause`
+    Then ERB the output should contain "Unpausing Pingdom '<%= ENV['PINGDOM_CHECK_NAME'] %>'"
