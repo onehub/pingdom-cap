@@ -1,3 +1,4 @@
 module PingdomCap
-  VERSION = '0.1.0'
+  # Follow http://semver.org/
+  VERSION = '0.1.1'
 end
