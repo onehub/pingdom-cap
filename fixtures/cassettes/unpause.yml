@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://john%40example.com:zzzzyyyyxxxxwwww@api.pingdom.com/api/2.0/checks
+    body: ''
+    headers:
+      App-Key:
+      - aaaabbbbccccddddeeeefffffaaaabbbb
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 09 Feb 2012 18:38:16 GMT
+      Server:
+      - Apache/2.2.14 (Ubuntu)
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.11
+      Cache-Control:
+      - no-cache
+      Req-Limit-Short:
+      - ! 'Remaining: 986 Time until reset: 3538'
+      Req-Limit-Long:
+      - ! 'Remaining: 4786 Time until reset: 86338'
+      Server-Time:
+      - '1328812697'
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '153'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body: !binary |-
+      H4sIAAAAAAAAA02OMQ6DMAxF7/LnqCJAVMhVqg5RagQqkAg7A0LcvUYsHby8
+      52//A3Gk+GX414HpA986a9veIG4UhBTYpq6rqnF9a7CGheDxHIYBBmNi+SOP
+      mBalG3Gai0xphXcGsudrYRTJKufAIqQzXTE93XW2dlV/G43mtDLdVv8asAQp
+      2g45FNY65/v8ASfheBKzAAAA
+    http_version: !!null 
+  recorded_at: Thu, 09 Feb 2012 18:38:17 GMT
+- request:
+    method: put
+    uri: https://john%40example.com:zzzzyyyyxxxxwwww@api.pingdom.com/api/2.0/checks/451149
+    body: paused=false
+    headers:
+      App-Key:
+      - aaaabbbbccccddddeeeefffffaaaabbbb
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 09 Feb 2012 18:38:17 GMT
+      Server:
+      - Apache/2.2.14 (Ubuntu)
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.11
+      Cache-Control:
+      - no-cache
+      Req-Limit-Short:
+      - ! 'Remaining: 985 Time until reset: 3537'
+      Req-Limit-Long:
+      - ! 'Remaining: 4785 Time until reset: 86337'
+      Server-Time:
+      - '1328812697'
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '51'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body: ! '{"message":"Modification of check was successful!"}'
+    http_version: !!null 
+  recorded_at: Thu, 09 Feb 2012 18:38:17 GMT
+recorded_with: VCR 2.0.0.rc1

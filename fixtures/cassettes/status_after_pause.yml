@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://john%40example.com:zzzzyyyyxxxxwwww@api.pingdom.com/api/2.0/checks/451149
+    body: ''
+    headers:
+      App-Key:
+      - aaaabbbbccccddddeeeefffffaaaabbbb
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 09 Feb 2012 18:38:16 GMT
+      Server:
+      - Apache/2.2.14 (Ubuntu)
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.11
+      Cache-Control:
+      - no-cache
+      Req-Limit-Short:
+      - ! 'Remaining: 987 Time until reset: 3538'
+      Req-Limit-Long:
+      - ! 'Remaining: 4787 Time until reset: 86338'
+      Server-Time:
+      - '1328812696'
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '322'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body: !binary |-
+      H4sIAAAAAAAAA12RwW6DMBBE/2VPrUQDJpAmvvUPeumpVMgxS7ACtmsvRVHE
+      v3etqGqUA0J6M9qdWV9BD6jPIK9gOpBVLUR1yMCqCUHCa9/3kEHA6MaZjLMg
+      6wwi2o4cTsqMIHs1RvxjcYoPhBZDhOGBGj84iw9Q2S64FOKOWkemN1ql3cvA
+      wC2coeSASbiokzIWfzBc7mDyHZU+zx4khZkn6YCKkCeLbVkWxbY+VBnQxWOq
+      PRD59J8Dt4Em577eBQK5L1Lz7xkjDag6DDHZPiKGl7cTWnbAu7Gnzk0b7ab2
+      6KjlJJGTtmJTtU9psGzyJl+WZeP/nU3+DOu6ZjC4SHeHThov186S0mQ6XvdZ
+      7oTY7r74GKRoZgJezZGrZDCqyJflz6QJ3Gy/F2VdHG4KP5l3NuJN5drr+gtN
+      FZtp6wEAAA==
+    http_version: !!null 
+  recorded_at: Thu, 09 Feb 2012 18:38:16 GMT
+recorded_with: VCR 2.0.0.rc1
