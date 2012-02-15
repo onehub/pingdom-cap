@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.summary       = 'Pause/unpause a Pingdom service from Capistrano'
   s.description   = 'Pause/unpause a Pingdom service from Capistrano'
   s.authors       = ['Iora Health']
-  s.email         = 'pingdom-cap@iorahealth.com'
+  s.email         = 'rubygems@iorahealth.com'
   s.files         = `git ls-files`.split("\n")
   s.homepage      = 'https://github.com/IoraHealth/pingdom-cap'
   s.rdoc_options  = ['--charset=UTF-8']
