@@ -6,7 +6,7 @@ module PingdomCap
   class Client
     BASE_SERVER_ADDRESS = "https://api.pingdom.com/api/2.0"
     OPTIONS = {
-      url: BASE_SERVER_ADDRESS
+      :url => BASE_SERVER_ADDRESS
     }
     REQUIRED_OPTIONS = [ :key, :url, :username, :password ]
 
@@ -16,7 +16,7 @@ module PingdomCap
       options = OPTIONS.merge(options)
       raise "Options #{REQUIRED_OPTIONS.join(', ')} are required" if REQUIRED_OPTIONS.any? { |op| options[op].nil? }
       headers = { 'App-Key' => options[:key] }
-      @connection = Faraday::Connection.new(url: options[:url], headers: headers) do |builder|
+      @connection = Faraday::Connection.new(:url => options[:url], :headers => headers) do |builder|
         builder.response :logger if options[:logger]
         builder.adapter Faraday.default_adapter
         builder.request  :url_encoded
@@ -28,7 +28,7 @@ module PingdomCap
 
     def status(name)
       puts "Status for Pingdom '#{name}'"
-      ap get_detailed_check_information(name_to_checkid(name)).to_hash, plain: true
+      ap get_detailed_check_information(name_to_checkid(name)).to_hash, :plain => true
     end
 
     def pause(name)
@@ -44,11 +44,11 @@ module PingdomCap
     private
 
     def check_pause(checkid)
-      modify_check(checkid, { paused: true })
+      modify_check(checkid, { :paused => true })
     end
 
     def check_unpause(checkid)
-      modify_check(checkid, { paused: false })
+      modify_check(checkid, { :paused => false })
     end
 
     def name_to_checkid(name)

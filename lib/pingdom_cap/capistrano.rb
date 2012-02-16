@@ -18,7 +18,7 @@ module PingdomCap
             if configuration.dry_run
               logger.info "DRY RUN: pingdom_cap #{check_name} #{operation} not actually run."
             else
-              client = PingdomCap::Client.new(username: username, password: password, key: key)
+              client = PingdomCap::Client.new(:username => username, :password => password, :key => key)
               client.send(operation, check_name)
             end
             logger.info("Pingdom: #{operation}")

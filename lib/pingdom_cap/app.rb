@@ -10,7 +10,7 @@ module PingdomCap
       operation = ARGV[1] || 'status'
 
       if check_name
-        pingdom = PingdomCap::Client.new(username: username, password: password, key: key)
+        pingdom = PingdomCap::Client.new(:username => username, :password => password, :key => key)
         pingdom.send(operation, check_name)
       else
         puts "usage: pingdom-cap check-name [status | pause | unpause]"
